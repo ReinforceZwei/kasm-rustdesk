@@ -16,7 +16,7 @@ RUN  TEMP_DEB="$(mktemp).deb" \
     && apt install -f $TEMP_DEB -y\
     && rm -f "$TEMP_DEB"
 
-RUN echo "/usr/bin/desktop_ready && /usr/lib/rustdesk/rustdesk &" > $STARTUPDIR/custom_startup.sh \
+RUN echo "/usr/bin/desktop_ready && /usr/bin/rustdesk &" > $STARTUPDIR/custom_startup.sh \
     && chmod +x $STARTUPDIR/custom_startup.sh
 
 ######### End Customizations ###########
